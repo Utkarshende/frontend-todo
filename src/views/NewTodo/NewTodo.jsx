@@ -10,7 +10,7 @@ const [todoData, setTodoData]=useState({ todoItem:"", priority: "high", emoji:"ð
     const [emojiPickerOpen, setEmojiPickerOpen]=useState(false);
 
     const addTodo= async()=>{
-      const response= await axios.post(`http://localhost:3000/todos`,todoData);
+      const response= await axios.post(`${import.meta.env.VITE_API_URL}/todos`,todoData);
       if(response){
         alert("To-Do item added successfully");
         setTimeOut(()=>{window.location.href="/"},2000)};
