@@ -1,0 +1,46 @@
+  .todo-card{
+    border:1px solid black;
+    margin: 20px;
+    padding: 5px 20px ;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .todo-icon{
+    font-size: 40px;
+    margin: 0 20px;
+  }
+  .todo-priority{
+    background-color: #000;
+    position: absolute;
+    top:5px;
+    right: 5px;
+    color: white;
+    padding: 5px 10px;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 14px;
+  }
+  .todo-created-at{
+    position: absolute;
+    bottom:5px;
+    right: 15px;
+}
+.todo-done{
+    text-decoration: line-through;
+    color: grey;
+}
+.fab{
+  position: static;
+  right: 40px;
+  bottom: 40px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 20px;
+}
