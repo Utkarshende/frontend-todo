@@ -2,6 +2,7 @@ import "./Home.css";
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router";
+import deleteButton from './delete.png';
 
 function Home() {
   const [todos, setTodos]=useState([]);
@@ -19,7 +20,7 @@ setTodos(response.data.data);
 const deleteTodo=async(id)=>{
   const response= await axios.delete(`${import.meta.env.VITE_API_URL}/todos/${id}`);
   if(response){
-    alert(response.data.message);
+    alert("To-Do item deleted successfully");
     loadTodos();
   }
 };
@@ -36,9 +37,9 @@ const deleteTodo=async(id)=>{
           <div className="todo-icon">{emoji}</div> 
           <div> <h2 className={`todo-detail ${isDone ? "todo-done" : ""}`}> {todoItem }</h2> </div>
           <span className="todo-created-at">{createdAt.replace("T", " ").slice(0,16)}</span>
-          <button onClick={()=>{
+          <img src={deleteButton} className="todo-delete-icon" alt="Delete"  onClick={()=>{
             deleteTodo(id);
-          }}>Delete Now</button>
+          }}/>
          </div>
           )
         })

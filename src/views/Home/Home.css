@@ -44,3 +44,10 @@
   border-radius: 50px;
   font-size: 20px;
 }
+.todo-delete-icon{
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  height: 30px;
+  cursor: pointer;
+}
