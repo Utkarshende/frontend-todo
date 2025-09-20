@@ -7,7 +7,7 @@ function Home() {
   const [todos, setTodos]=useState([]);
 
   const loadTodos = async ()=>{
-    const response = await axios.get("http://localhost:3000/todos");
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/todos`);
     // it is async request that runs in the background[lect131-26:01min]
 setTodos(response.data.data);
   };//u can use await keyword only when async is used 29:31min
@@ -17,7 +17,7 @@ setTodos(response.data.data);
   }, [])
 
 const deleteTodo=async(id)=>{
-  const response= await axios.delete("http://localhost:3000/todos/id");
+  const response= await axios.delete(`${import.meta.env.VITE_API_URL}/todos/${id}`);
   if(response){
     alert(response.data.message);
     loadTodos();
