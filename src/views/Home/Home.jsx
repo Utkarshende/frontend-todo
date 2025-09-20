@@ -19,7 +19,7 @@ setTodos(response.data.data);
 const deleteTodo=async(id)=>{
   const response= await axios.delete(`${import.meta.env.VITE_API_URL}/todos/${id}`);
   if(response){
-    alert("To-Do items deleted successfully !");
+    alert(response.data.message);
     loadTodos();
   }
 };
@@ -37,7 +37,7 @@ const deleteTodo=async(id)=>{
           <div> <h2 className={`todo-detail ${isDone ? "todo-done" : ""}`}> {todoItem }</h2> </div>
           <span className="todo-created-at">{createdAt.replace("T", " ").slice(0,16)}</span>
           <button onClick={()=>{
-            deleteTodo(id)
+            deleteTodo(id);
           }}>Delete Now</button>
          </div>
           )
