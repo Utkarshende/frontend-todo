@@ -9,6 +9,7 @@ function Home() {
   const [todos, setTodos]=useState([]);
 
   const loadTodos = async ()=>{
+   
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/todos`);
     // it is async request that runs in the background[lect131-26:01min]
 setTodos(response.data.data);
@@ -53,7 +54,7 @@ if(response){
           }}/>
           <Link to={`/edit/${id}`}>
            <img src={imgEdit} className="todo-edit-icon" alt="Edit"  onClick={()=>{
-            deleteTodo(id);
+            markTodoDone(id);
           }}/>
           </Link>
          </div>
