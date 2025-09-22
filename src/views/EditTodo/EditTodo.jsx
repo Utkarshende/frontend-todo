@@ -32,7 +32,7 @@ useEffect(()=>{
     const updateTodo= async()=>{
       const response= await axios.put(`${import.meta.env.VITE_API_URL}/todos`,todoData);
       if(response){
-        alert("To-Do item added successfully");
+        alert("To-Do item updated successfully");
         setTimeOut(()=>{window.location.href="/"},2000)};
     };
 
