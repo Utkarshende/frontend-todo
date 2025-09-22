@@ -30,7 +30,7 @@ useEffect(()=>{
     const [emojiPickerOpen, setEmojiPickerOpen]=useState(false);
 
     const updateTodo= async()=>{
-      const response= await axios.put(`${import.meta.env.VITE_API_URL}/todos`,todoData);
+      const response= await axios.put(`${import.meta.env.VITE_API_URL}/todos/:id`,todoData);
       if(response){
         alert("To-Do item updated successfully");
         setTimeOut(()=>{window.location.href="/"},2000)};

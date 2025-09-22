@@ -62,6 +62,8 @@ if(response){
         })
      }
 <Link to="/new" className="fab"> New To-Do</Link>
+    <br/>
+    <Link to="/edit" className="fab"> Edit To-Do</Link>
     </div>
   )
 }
