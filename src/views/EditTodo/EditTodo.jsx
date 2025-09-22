@@ -5,7 +5,7 @@ import axios from 'axios';
 import {useParams} from 'react-router';
 
 function EditTodo() {
-   const {id}= useParams();
+const {id}= useParams();
 
 const [todoData, setTodoData]=useState({ todoItem:"", priority: "high", emoji:"🌸", isDone:false});
 
@@ -34,7 +34,7 @@ useEffect(()=>{
         todoData);
       if(response){
         alert("To-Do item updated successfully");
-        setTimeOut(()=>{window.location.href="/"},2000)};
+       // setTimeOut(()=>{window.location.href="/"},2000)};
     };
 
   return (
