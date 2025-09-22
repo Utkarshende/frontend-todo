@@ -53,6 +53,7 @@ if(response){
             deleteTodo(id);
           }}/>
           <Link to={`/edit/${id}`}>
+          
            <img src={imgEdit} className="todo-edit-icon" alt="Edit"  onClick={()=>{
             markTodoDone(id);
           }}/>
@@ -62,8 +63,7 @@ if(response){
         })
      }
 <Link to="/new" className="fab"> New To-Do</Link>
-    <br/>
-    <Link to="/edit/:id" className="fab"> Edit To-Do</Link>
+
     </div>
   )
 }
