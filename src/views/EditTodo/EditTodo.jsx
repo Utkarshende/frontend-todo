@@ -11,7 +11,7 @@ const [todoData, setTodoData]=useState({ todoItem:"", priority: "high", emoji:"ð
 
 const loadTodo=async(id)=>{
   if (!id)return;
-  const response=await axios.get(`${import.meta.env.VITE_API_URL}/todos/${id}`);
+  const response=await axios.put(`${import.meta.env.VITE_API_URL}/todos/${id}`);
 
   const todoDetail=response.data.data;
 

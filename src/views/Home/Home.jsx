@@ -37,13 +37,15 @@ if(response){
   return (
     <div>
       <h1> React To-Do </h1>
-      {
-        todos.map((todoObj)=>{
-          const {id, todoItem, priority, emoji, isDone ,createdAt}= todoObj;
+
+      {todos.map((todoObj) => {
+          const {id, todoItem, emoji, priority , isDone ,createdAt}= todoObj;
           return (
           <div key={id} className="todo-card"> 
-          <span className={"todo-priority"}>{priority}</span>
-          <input type="checkbox" checked={isDone} onChange={(e)=>{
+          <span className="todo-priority">{priority}</span>
+          <input type="checkbox" 
+          checked={isDone} 
+          onChange={(e)=>{
             markTodoDone(id, e.target.checked)
           }}/>
           <div className="todo-icon">{emoji}</div> 
