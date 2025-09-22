@@ -51,3 +51,10 @@
   height: 30px;
   cursor: pointer;
 }
+.todo-edit-icon{
+  position: absolute;
+  top: 10px;
+  right: 150px;
+  height: 25px;
+  cursor: pointer;
+}

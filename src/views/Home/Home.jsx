@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router";
 import deleteButton from './delete.png';
+import imgEdit from './edit.png';
 
 function Home() {
   const [todos, setTodos]=useState([]);
@@ -50,6 +51,11 @@ if(response){
           <img src={deleteButton} className="todo-delete-icon" alt="Delete"  onClick={()=>{
             deleteTodo(id);
           }}/>
+          <Link to={`/edit/${id}`}>
+           <img src={imgEdit} className="todo-edit-icon" alt="Edit"  onClick={()=>{
+            deleteTodo(id);
+          }}/>
+          </Link>
          </div>
           )
         })

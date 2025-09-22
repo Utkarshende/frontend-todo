@@ -24,7 +24,7 @@ const [todoData, setTodoData]=useState({ todoItem:"", priority: "high", emoji:"ð
      {todoData.priority}
      </p>
      <div className='new-todo-form'>
-        <h1>New To-Do</h1>
+        <h1>Edit To-Do</h1>
      <input 
      type="text"
       value={todoData.todoItem}
