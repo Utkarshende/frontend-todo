@@ -34,7 +34,7 @@ useEffect(()=>{
         todoData);
       if(response){
         alert("To-Do item updated successfully");
-       // setTimeOut(()=>{window.location.href="/"},2000)};
+        setTimeOut(()=>{window.location.href="/"},2000)};
     };
 
   return (
