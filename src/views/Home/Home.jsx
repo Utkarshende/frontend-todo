@@ -25,7 +25,7 @@ const deleteTodo=async(id)=>{
   }
 };
 const markTodoDone=async (id, isDone)=>{
-  const response= await axios.patch($`{import.meta.env.VITE_API_URL}/todos/${id}/status`, {isDone});
+  const response= await axios.patch(`${import.meta.env.VITE_API_URL}/todos/${id}/status`, {isDone});
 if(response){
   alert("To-Do status updated successfully");
   loadTodos();
