@@ -13,15 +13,15 @@ const loadTodo=async(id)=>{
   if (!id)return;
   const response=await axios.get(`${import.meta.env.VITE_API_URL}/todos/${id}`);
 
-  const todoDetail=response.data.data
+  const todoDetail=response.data.data;
 
-  setTodoData(
-    todoItem=todoDetail.todoItem,
-    priority=todoDetail.priority,
-    emoji=todoDetail.emoji,
-    isDone=todoDetail.isDone
-  );
-}
+  setTodoData({
+    todoItem:todoDetail.todoItem,
+    priority:todoDetail.priority,
+    emoji:todoDetail.emoji,
+    isDone:todoDetail.isDone
+  });
+};
 
 useEffect(()=>{
   loadTodo(id);
@@ -30,7 +30,8 @@ useEffect(()=>{
     const [emojiPickerOpen, setEmojiPickerOpen]=useState(false);
 
     const updateTodo= async()=>{
-      const response= await axios.put(`${import.meta.env.VITE_API_URL}/todos/${id}`,todoData);
+      const response= await axios.put(`${import.meta.env.VITE_API_URL}/todos/${id}`,
+        todoData);
       if(response){
         alert("To-Do item updated successfully");
         setTimeOut(()=>{window.location.href="/"},2000)};
