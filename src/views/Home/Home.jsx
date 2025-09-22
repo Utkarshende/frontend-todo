@@ -24,6 +24,13 @@ const deleteTodo=async(id)=>{
     loadTodos();
   }
 };
+const markTodoDone=async (id, isDone)=>{
+  const response= await axios.patch($`{import.meta.env.VITE_API_URL}/todos/${id}/status`, {isDone});
+if(response){
+  alert("To-Do status updated successfully");
+  loadTodos();
+}
+};
 
   return (
     <div>
@@ -34,6 +41,9 @@ const deleteTodo=async(id)=>{
           return (
           <div key={id} className="todo-card"> 
           <span className={"todo-priority"}>{priority}</span>
+          <input type="checkbox" checked={isDone} onChange={(e)=>{
+            markTodoDone(id, e.target.checked)
+          }}/>
           <div className="todo-icon">{emoji}</div> 
           <div> <h2 className={`todo-detail ${isDone ? "todo-done" : ""}`}> {todoItem }</h2> </div>
           <span className="todo-created-at">{createdAt.replace("T", " ").slice(0,16)}</span>
